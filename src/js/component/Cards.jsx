@@ -4,35 +4,36 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const CardGeneral=(props)=>{
+const CardGeneral = (props) => {
   return (
-    <Card style={{ width: '14rem', border:'none' }}>
-      <Card.Img  variant="top" src={props.img} />
-      <Card.Body >
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae quod et doloremque praesentium
-        </Card.Text>
-        <Button variant="primary">Find Out More!</Button>
-      </Card.Body>
-    </Card>
-    
+    <Col xs={12} md={3} className="mb-3">
+      <Card>
+        <Card.Img variant="top" src={props.img} />
+        <Card.Body>
+          <Card.Title className="text-center">Card Title</Card.Title>
+          <Card.Text>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae quod et doloremque praesentium
+          </Card.Text>
+          <div className="text-center"> {/* Aquí se añade la clase text-center */}
+            <Button variant="primary">Find Out More!</Button>
+          </div>
+        </Card.Body>
+      </Card>
+    </Col>
   )
 }
 
-const Cards = () =>{
-    return ( 
-      <div className="container" >
-    <div className="row row-cols-1 row-cols-md-3 g-4">
-      <CardGeneral img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZfXHrUGqG0zbupTXBVizgKoxQrHortHhy-w&usqp=CAU"/>,
-      <CardGeneral img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZfXHrUGqG0zbupTXBVizgKoxQrHortHhy-w&usqp=CAU"/>,
-      <CardGeneral img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZfXHrUGqG0zbupTXBVizgKoxQrHortHhy-w&usqp=CAU"/>,
-      <CardGeneral img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZfXHrUGqG0zbupTXBVizgKoxQrHortHhy-w&usqp=CAU"/>,
-       </div> 
-     </div>
-     );
-  
-  }
-  
-  
-  export default Cards;
+const Cards = () => {
+  return (
+    <Container className="container" >
+      <Row className="row">
+        <CardGeneral img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZfXHrUGqG0zbupTXBVizgKoxQrHortHhy-w&usqp=CAU" />
+        <CardGeneral img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZfXHrUGqG0zbupTXBVizgKoxQrHortHhy-w&usqp=CAU" />
+        <CardGeneral img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZfXHrUGqG0zbupTXBVizgKoxQrHortHhy-w&usqp=CAU" />
+        <CardGeneral img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZfXHrUGqG0zbupTXBVizgKoxQrHortHhy-w&usqp=CAU" />
+      </Row>
+    </Container>
+  );
+}
+
+export default Cards;
